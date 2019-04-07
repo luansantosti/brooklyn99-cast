@@ -16,7 +16,7 @@ class Detail extends Component {
           return <div>{error.message}</div>
         } else if (props) {
           console.log(props)
-          return <Info post={props}/>
+          return <Info props={props.viewer.Post}/>
         }
         return <div>Loading</div>
       }}/>
@@ -24,10 +24,20 @@ class Detail extends Component {
   }
 }
 
-const Info = ({post}) => (
+const Info = ({props}) => (
   <div>
-    {post.viewer.Post.title}
-    <img src={ post.viewer.Post.imageUrl } alt={post.viewer.Post.title}/>
+    {props.title}
+    {props.description}
+    <img src={ props.imageUrl } alt={props.title}/>
+    { props.occupation && <SubSection title='Occupation' props={props.occupation} /> }
+    { props.nickname && <SubSection title='Nickname(s)' props={props.nickname} /> }
+  </div>
+)
+
+const SubSection = ({ title, props}) => (
+  <div>
+    { title } <br/>
+    { props }
   </div>
 )
 
@@ -38,6 +48,8 @@ const DetailQuery = graphql`
         title
         imageUrl
         description
+        nickname
+        occupation
       }
     }
   }

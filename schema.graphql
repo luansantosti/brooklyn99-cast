@@ -1,12 +1,18 @@
 input CreatePost {
   description: String!
   imageUrl: String!
+  nickname: String
+  occupation: String
+  shortDescription: String
   title: String!
 }
 
 input CreatePostInput {
   description: String!
   imageUrl: String!
+  nickname: String
+  occupation: String
+  shortDescription: String
   title: String!
   clientMutationId: String!
 }
@@ -114,6 +120,9 @@ type Post implements Node {
   description: String!
   id: ID!
   imageUrl: String!
+  nickname: String
+  occupation: String
+  shortDescription: String
   title: String!
   updatedAt: DateTime!
 }
@@ -287,6 +296,126 @@ input PostFilter {
 
   """All values not ending with the given string."""
   imageUrl_not_ends_with: String
+  nickname: String
+
+  """All values that are not equal to given value."""
+  nickname_not: String
+
+  """All values that are contained in given list."""
+  nickname_in: [String!]
+
+  """All values that are not contained in given list."""
+  nickname_not_in: [String!]
+
+  """All values less than the given value."""
+  nickname_lt: String
+
+  """All values less than or equal the given value."""
+  nickname_lte: String
+
+  """All values greater than the given value."""
+  nickname_gt: String
+
+  """All values greater than or equal the given value."""
+  nickname_gte: String
+
+  """All values containing the given string."""
+  nickname_contains: String
+
+  """All values not containing the given string."""
+  nickname_not_contains: String
+
+  """All values starting with the given string."""
+  nickname_starts_with: String
+
+  """All values not starting with the given string."""
+  nickname_not_starts_with: String
+
+  """All values ending with the given string."""
+  nickname_ends_with: String
+
+  """All values not ending with the given string."""
+  nickname_not_ends_with: String
+  occupation: String
+
+  """All values that are not equal to given value."""
+  occupation_not: String
+
+  """All values that are contained in given list."""
+  occupation_in: [String!]
+
+  """All values that are not contained in given list."""
+  occupation_not_in: [String!]
+
+  """All values less than the given value."""
+  occupation_lt: String
+
+  """All values less than or equal the given value."""
+  occupation_lte: String
+
+  """All values greater than the given value."""
+  occupation_gt: String
+
+  """All values greater than or equal the given value."""
+  occupation_gte: String
+
+  """All values containing the given string."""
+  occupation_contains: String
+
+  """All values not containing the given string."""
+  occupation_not_contains: String
+
+  """All values starting with the given string."""
+  occupation_starts_with: String
+
+  """All values not starting with the given string."""
+  occupation_not_starts_with: String
+
+  """All values ending with the given string."""
+  occupation_ends_with: String
+
+  """All values not ending with the given string."""
+  occupation_not_ends_with: String
+  shortDescription: String
+
+  """All values that are not equal to given value."""
+  shortDescription_not: String
+
+  """All values that are contained in given list."""
+  shortDescription_in: [String!]
+
+  """All values that are not contained in given list."""
+  shortDescription_not_in: [String!]
+
+  """All values less than the given value."""
+  shortDescription_lt: String
+
+  """All values less than or equal the given value."""
+  shortDescription_lte: String
+
+  """All values greater than the given value."""
+  shortDescription_gt: String
+
+  """All values greater than or equal the given value."""
+  shortDescription_gte: String
+
+  """All values containing the given string."""
+  shortDescription_contains: String
+
+  """All values not containing the given string."""
+  shortDescription_not_contains: String
+
+  """All values starting with the given string."""
+  shortDescription_starts_with: String
+
+  """All values not starting with the given string."""
+  shortDescription_not_starts_with: String
+
+  """All values ending with the given string."""
+  shortDescription_ends_with: String
+
+  """All values not ending with the given string."""
+  shortDescription_not_ends_with: String
   title: String
 
   """All values that are not equal to given value."""
@@ -360,6 +489,12 @@ enum PostOrderBy {
   id_DESC
   imageUrl_ASC
   imageUrl_DESC
+  nickname_ASC
+  nickname_DESC
+  occupation_ASC
+  occupation_DESC
+  shortDescription_ASC
+  shortDescription_DESC
   title_ASC
   title_DESC
   updatedAt_ASC
@@ -412,6 +547,9 @@ input UpdatePost {
   description: String
   id: ID!
   imageUrl: String
+  nickname: String
+  occupation: String
+  shortDescription: String
   title: String
 }
 
@@ -419,6 +557,9 @@ input UpdatePostInput {
   description: String
   id: ID!
   imageUrl: String
+  nickname: String
+  occupation: String
+  shortDescription: String
   title: String
   clientMutationId: String!
 }

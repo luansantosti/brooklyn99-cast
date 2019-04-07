@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 63708a690141c6f9db54539c9a75850b
+ * @relayHash 1e9b0c8aa92bcf17401253661de63137
  */
 
 /* eslint-disable */
@@ -18,6 +18,8 @@ export type DetailQueryResponse = {|
       +title: string,
       +imageUrl: string,
       +description: string,
+      +nickname: ?string,
+      +occupation: ?string,
     |}
   |}
 |};
@@ -37,6 +39,8 @@ query DetailQuery(
       title
       imageUrl
       description
+      nickname
+      occupation
       id
     }
     id
@@ -85,6 +89,20 @@ v4 = {
 v5 = {
   "kind": "ScalarField",
   "alias": null,
+  "name": "nickname",
+  "args": null,
+  "storageKey": null
+},
+v6 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "occupation",
+  "args": null,
+  "storageKey": null
+},
+v7 = {
+  "kind": "ScalarField",
+  "alias": null,
   "name": "id",
   "args": null,
   "storageKey": null
@@ -118,7 +136,9 @@ return {
             "selections": [
               (v2/*: any*/),
               (v3/*: any*/),
-              (v4/*: any*/)
+              (v4/*: any*/),
+              (v5/*: any*/),
+              (v6/*: any*/)
             ]
           }
         ]
@@ -151,10 +171,12 @@ return {
               (v2/*: any*/),
               (v3/*: any*/),
               (v4/*: any*/),
-              (v5/*: any*/)
+              (v5/*: any*/),
+              (v6/*: any*/),
+              (v7/*: any*/)
             ]
           },
-          (v5/*: any*/)
+          (v7/*: any*/)
         ]
       }
     ]
@@ -163,11 +185,11 @@ return {
     "operationKind": "query",
     "name": "DetailQuery",
     "id": null,
-    "text": "query DetailQuery(\n  $idTest: ID!\n) {\n  viewer {\n    Post(id: $idTest) {\n      title\n      imageUrl\n      description\n      id\n    }\n    id\n  }\n}\n",
+    "text": "query DetailQuery(\n  $idTest: ID!\n) {\n  viewer {\n    Post(id: $idTest) {\n      title\n      imageUrl\n      description\n      nickname\n      occupation\n      id\n    }\n    id\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '418e6521b0ef1952408103ff757296bf';
+(node/*: any*/).hash = '14d6fa287bc642e2703d2ff0bb442378';
 module.exports = node;

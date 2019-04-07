@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b6e0dbf59084db0592c0997cb184e306
+ * @relayHash 9151cebc2fc154be78ec267ada90a324
  */
 
 /* eslint-disable */
@@ -50,8 +50,9 @@ fragment ListPage_viewer on Viewer {
 
 fragment Post_post on Post {
   id
-  description
   imageUrl
+  title
+  shortDescription
 }
 */
 
@@ -149,14 +150,21 @@ return {
                       {
                         "kind": "ScalarField",
                         "alias": null,
-                        "name": "description",
+                        "name": "imageUrl",
                         "args": null,
                         "storageKey": null
                       },
                       {
                         "kind": "ScalarField",
                         "alias": null,
-                        "name": "imageUrl",
+                        "name": "title",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "shortDescription",
                         "args": null,
                         "storageKey": null
                       },
@@ -223,7 +231,7 @@ return {
     "operationKind": "query",
     "name": "HomeQuery",
     "id": null,
-    "text": "query HomeQuery {\n  viewer {\n    ...ListPage_viewer\n    id\n  }\n}\n\nfragment ListPage_viewer on Viewer {\n  allPosts(last: 100, orderBy: createdAt_ASC) {\n    edges {\n      node {\n        ...Post_post\n        id\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment Post_post on Post {\n  id\n  description\n  imageUrl\n}\n",
+    "text": "query HomeQuery {\n  viewer {\n    ...ListPage_viewer\n    id\n  }\n}\n\nfragment ListPage_viewer on Viewer {\n  allPosts(last: 100, orderBy: createdAt_ASC) {\n    edges {\n      node {\n        ...Post_post\n        id\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment Post_post on Post {\n  id\n  imageUrl\n  title\n  shortDescription\n}\n",
     "metadata": {}
   }
 };
