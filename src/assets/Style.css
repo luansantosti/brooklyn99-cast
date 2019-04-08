@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #1d1d26;
+}
+img {
+  max-width: 100%;
+}
