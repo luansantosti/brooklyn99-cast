@@ -29,6 +29,7 @@
     "eject": "react-scripts eject",
     "relay": "relay-compiler --src ./src --schema ./schema.graphql",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "now-build": "react-scripts build"
   }
 }
