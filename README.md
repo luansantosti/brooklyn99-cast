@@ -17,7 +17,7 @@ yarn relay
 ### To run your app
 
 ```
-yarn relay
+yarn start
 ```
 
 
